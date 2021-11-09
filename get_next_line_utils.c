@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:45:01 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/11/09 13:29:53 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/11/09 13:59:05 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,15 @@ int	ft_strlenmodif(const char *str)
 		i++;
 	}
 	return (j);
+}
+
+int	ft_strlen_end(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	str[i] = '\0';
+	return (i);
 }

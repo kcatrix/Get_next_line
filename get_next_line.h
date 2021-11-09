@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:45:10 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/11/09 13:30:09 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/11/09 13:59:22 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@
 char	*get_next_line(int fd);
 char	*ft_strchr(const char *s, int c);
 int		ft_strlenmodif(const char *str);
+int		ft_strlen_end(char *str);
 
 #endif

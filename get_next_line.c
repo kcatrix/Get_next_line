@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:45:06 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/11/09 13:47:02 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/11/09 14:33:30 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*get_next_line(int fd)
 	char	*str;
 	static char	*strrec;
 	
-	str = malloc(sizeof(char *) * BUFFER_SIZE + 1);
+	str = malloc(sizeof(char) * BUFFER_SIZE + 1);
 	count = read(fd, str, BUFFER_SIZE);
-	strrec = malloc(sizeof(char) * ft_strlenmodif(str));
+	strrec = malloc(sizeof(char *) * ft_strlenmodif(str));
 	strrec = ft_strchr(str, '\n');
 	printf("strrec = %s\n", strrec);
 	return (str);
