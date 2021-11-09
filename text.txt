@@ -1,0 +1,4 @@
+je suis la chaine.
+je suis la deuxieme ligne de la chaine.
+je suis la troisieme ligne de la chaine.
+je suis la fin de la chaine.
