@@ -1,26 +1,19 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 10:45:10 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/11/09 13:59:22 by kcatrix          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# include <sys/stat.h>
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
 
 char	*get_next_line(int fd);
-char	*ft_strchr(const char *s, int c);
-int		ft_strlenmodif(const char *str);
-int		ft_strlen_end(char *str);
+size_t	ft_strlen(const char *s);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+char	*ft_strdup(char *s1);
+char	*ft_strjoin(char *s1, char *s2);
+int		compteur_sot(char *stock);
+char	*after(char	**stock, int i);
+char 	*end(char **stock);
+int		main();
 
 #endif
