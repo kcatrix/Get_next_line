@@ -2,7 +2,7 @@
 
 char 	*end(char **stock)
 {
-	if (compteur_sot(*stock) < 0)
+	if (compteur_sot(*stock) < 0 && (*stock))
 		return (*stock);
 	else if (compteur_sot(*stock) >= 0)
 		return(after(stock, compteur_sot(*stock)));
@@ -46,16 +46,18 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	nb_char = BUFFER_SIZE;
-	while(nb_char == BUFFER_SIZE)
-	{
-		nb_char = read(fd, buff, BUFFER_SIZE);
-		if (nb_char < 0)
+	if (stock != NULL && compteur_sot(stock) >= 0)
+		return(after(&stock, compteur_sot(stock)));
+	nb_char = read(fd, buff, BUFFER_SIZE);
+	if (nb_char <= 0)
 			return (NULL);
-		buff[BUFFER_SIZE] = '\0';
+	while(nb_char > 0)
+	{
+		buff[nb_char] = '\0';
 		stock = ft_strjoin(stock, buff);
 		if (compteur_sot(stock) >= 0)
 			return(after(&stock, compteur_sot(stock)));
+		nb_char = read(fd, buff, BUFFER_SIZE);
 	}
 	return(end(&stock));
 }
