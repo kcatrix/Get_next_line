@@ -1,13 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/22 11:21:03 by kcatrix           #+#    #+#             */
+/*   Updated: 2021/11/22 11:21:37 by kcatrix          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_substr(char const *s, int start, int len)
 {
-	size_t	i;
+	char	*str;
+	int		i;
 
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > ft_strlen(&s[start]))
+		len = ft_strlen(&s[start]);
 	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	str = malloc(sizeof(char) * len + 1);
+	if (!str)
+		return (NULL);
+	while (s[start] && i < len)
+		str[i++] = s[start++];
+	str[i] = 0;
+	return (str);
 }
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
